@@ -1,1 +1,1 @@
-var htmlLink = "http://weddingshots.pl/public_html/procek.php";
+var htmlLink = "<server_url>/procek.php";
