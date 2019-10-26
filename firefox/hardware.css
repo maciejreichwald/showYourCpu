@@ -1,0 +1,78 @@
+table {
+  border-collapse: collapse;
+  width: 480px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  padding: 10px;
+}
+
+body {
+  background-image: url("hardware.webp");
+  text-align: center;
+  height: 520px;
+  width: 520px;
+}
+
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+
+@mixin stroke($stroke, $color) {
+  text-shadow: stroke($stroke, $color);
+}
+
+.titleDiv {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  color: #FFFFFF;
+  left: 0;
+  right: 0;
+  bottom: 125px;
+}
+
+.textShadow {
+  text-shadow:
+        -1px -1px 0px #000,
+         0px -1px 0px #000,
+         1px -1px 0px #000,
+        -1px  0px 0px #000,
+         1px  0px 0px #000,
+        -1px  1px 0px #000,
+         0px  1px 0px #000,
+         1px  1px 0px #000;
+}
+
+.hardInput {
+  float: right;
+  margin-right: 15px;
+  width: 430px
+}
+
+.button {
+  background-color: #00BFFF; /* Green */
+  border: none;
+  width: 500px;
+  height: 70px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position: absolute;
+  left: 15px;
+  right:    15px;
+  bottom:   15px;
+}
