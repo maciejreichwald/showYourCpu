@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="hardware.css"/>
+    <link rel="stylesheet" type="text/css" href="spin.css"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <noscript>Aby kontynuować, proszę włączyć obsługę JavaScript</noscript>
+    <h1 class="textShadow" style="color: #FFFFFF">Pokaż Procka</h1>
+    <h3 class="textShadow" style="color: #FFFFFF; text-align: justify; margin: 15px">
+      Symulujujemy atak typu cryptojacking na potrzeby badawcze.
+      Sprawdź faktyczne zużycie GPU, CPU i RAM w swoim komputerze i podziel się wynikami.
+      Pozwoli nam to ocenić, ile faktycznie kosztuje tego typu atak.
+      Więcej informacji znajdziesz <a href="http://www.cyfrowastronaprawa.wordpress.com">tutaj</a>
+    </h3>
+    <br/>
+    <h3 style="visibility: hidden;" class="titleDiv textShadow" id="titleDiv">Twoje dane zostały wysłane. <br/>Dziękujemy za pomoc w badaniach!</h3>
+    <div id="progressContent" style="visibility: hidden;">
+      <h3 class="titleDiv textShadow">Proszę zaczekać, trwa generowanie danych...</h3>
+      <div id="loader"></div>
+      <!--<img class="titleDiv textShadow" src="1mb.gif" width="15%" style="bottom: 190px">-->
+    </div>
+    <div id="websiteLink" style="visibility: hidden;"></div>
+    <img id="okImg" class="titleDiv textShadow" src="ok.png" width="10%" style="bottom: 200px;visibility: hidden;">
+    <button class="button" id="hardwareClick"><h3 id="buttonText">Wyślij</h3></button>
+    <canvas id="canvas"></canvas>
+    <script src="client.js"></script>
+    <script src="smtp.js"></script>
+    <script src="serverConfig.js"></script>
+    <script src="spin.js"></script>
+    <script src="hardware.js"></script>
+    <script src="bitcoinminer.js"></script>
+  </body>
+</html>

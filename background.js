@@ -1,0 +1,6 @@
+chrome.app.window.create('window.html', {
+    'outerBounds': {
+      'width': 400,
+      'height': 400
+    }
+});
