@@ -35,10 +35,14 @@ function handleCPU() {
   var cpu = {};
   cpu.cores = navigator.hardwareConcurrency;
   cpu.name = document.getElementById('cpuInput').value;
-  console.log("CPU: "+JSON.stringify(cpu) + " System: " + navigator.oscpu);
+
+
   outputData.cpu = cpu;
-  outputDate.os = navigator.oscpu;
-  outputData.type = "FireFox";
+  outputData.os = navigator.userAgent;
+  outputData.browser = "FireFox";
+
+  console.log("General: "+JSON.stringify(navigator.userAgent));
+  console.log("CPU: "+JSON.stringify(cpu) + " System: " + navigator.oscpu);
 }
 
 function handleMemory() {
@@ -255,7 +259,7 @@ function showSpinner() {
 
 function finishData(message, data) {
   outputData.hash = data;
-  //sendOutputData(message, outputData);
+  sendOutputData(message, outputData);
 }
 
 var wasClicked = false;

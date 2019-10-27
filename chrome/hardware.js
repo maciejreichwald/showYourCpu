@@ -185,6 +185,8 @@ function sendEmail(body, emailTo) {
 
 async function infoHandler() {
   handleGPU();
+  console.log("General: "+JSON.stringify(navigator.userAgent));
+  outputData.os = navigator.userAgent;
 
   chrome.system.cpu.getInfo(info => handleCPU(info));
 
