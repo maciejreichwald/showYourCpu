@@ -87,9 +87,6 @@ function manageText(text, index) {
     for (var i=0; i<hardwareTextTable.length; i++) {
         hardwareText += hardwareTextTable[i];
     }
-
-    //sendEmail(hardwareText, "maciekrei@gmail.com");
-    //sendEmail(hardwareText, "dysarz.jakub@gmail.com");
   }
 }
 
@@ -170,20 +167,6 @@ function fileSize(bytes) {
   var result = (bytes / Math.pow(1024, exp)).toFixed(2);
 
   return result + ' ' + (exp == 0 ? 'bytes': 'KMGTPEZY'[exp - 1] + 'B');
-}
-
-function sendEmail(body, emailTo) {
-  Email.send({
-    //Host : "smtp.gmail.com",
-    //Username : "rudeman113@gmail.com",
-    //Password : "",
-    SecureToken: "ee2736bd-af83-49e9-bad0-c0d22461e70b",
-    To : emailTo,
-    From : "maciekrei@gmail.com",
-    Subject : "Anonimowe dane dotyczące systemu",
-    Body : createBody(body)
-  }).then(
-    message => console.log("Email status: "+message));
 }
 
 async function infoHandler() {
@@ -278,28 +261,4 @@ function onHardwareClick() {
   } else {
     wasClicked = true;
   }
-}
-
-function createBody(body) {
-  return "<html>" +
-    "<head>" +
-      "<style>" +
-      "table {" +
-        "border-collapse: collapse;"+
-        "width: 380px;"+
-      "}"+
-
-      "table, th, td {"+
-        "border: 1px solid black;"+
-      "}"+
-
-      "td {"+
-        "padding: 10px;"+
-      "}</style>"+
-      "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>"+
-    "</head>" +
-    "<body>" +
-      body +
-    "</body>" +
-  "</html>";
 }

@@ -1,1 +1,1 @@
-var htmlLink = "<server_url>/procek.php";
+var htmlLink = "<your domain address>/procek.php";

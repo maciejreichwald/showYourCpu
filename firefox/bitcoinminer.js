@@ -50,7 +50,10 @@ function runMiner() {
     dataObj.time = seconds;
     allHashMessage.push(dataObj);
 
-    finalMessage = ((seconds - seconds % 60) / 60)+"min "+(seconds % 60)+"s";
+    var secondsOnly = seconds % 60;
+    secondsOnly = secondsOnly.toFixed(2);
+
+    finalMessage = ((seconds - seconds % 60) / 60)+"min "+secondsOnly+"s";
     difficulty += 1;
     limitRun++;
   }

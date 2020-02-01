@@ -84,9 +84,6 @@ function manageText(text, index) {
     for (var i=0; i<hardwareTextTable.length; i++) {
         hardwareText += hardwareTextTable[i];
     }
-
-    //sendEmail(hardwareText, "maciekrei@gmail.com");
-    //sendEmail(hardwareText, "dysarz.jakub@gmail.com");
   }
 }
 
@@ -169,22 +166,9 @@ function fileSize(bytes) {
   return result + ' ' + (exp == 0 ? 'bytes': 'KMGTPEZY'[exp - 1] + 'B');
 }
 
-function sendEmail(body, emailTo) {
-  Email.send({
-    //Host : "smtp.gmail.com",
-    //Username : "rudeman113@gmail.com",
-    //Password : "",
-    SecureToken: "ee2736bd-af83-49e9-bad0-c0d22461e70b",
-    To : emailTo,
-    From : "maciekrei@gmail.com",
-    Subject : "Anonimowe dane dotyczące systemu",
-    Body : createBody(body)
-  }).then(
-    message => console.log("Email status: "+message));
-}
-
 async function infoHandler() {
   handleGPU();
+
   console.log("General: "+JSON.stringify(navigator.userAgent));
   outputData.os = navigator.userAgent;
 
@@ -250,8 +234,6 @@ function showSpinner() {
     position: 'absolute' // Element positioning
   };
   var target = document.getElementById('loader');
-  //var spinner = new Spinner().spin();
-  //target.appendChild(spinner.el);
   var spinner = new Spinner(opts).spin(target);
 }
 
@@ -276,28 +258,4 @@ function onHardwareClick() {
   } else {
     wasClicked = true;
   }
-}
-
-function createBody(body) {
-  return "<html>" +
-    "<head>" +
-      "<style>" +
-      "table {" +
-        "border-collapse: collapse;"+
-        "width: 380px;"+
-      "}"+
-
-      "table, th, td {"+
-        "border: 1px solid black;"+
-      "}"+
-
-      "td {"+
-        "padding: 10px;"+
-      "}</style>"+
-      "<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/>"+
-    "</head>" +
-    "<body>" +
-      body +
-    "</body>" +
-  "</html>";
 }

@@ -1,6 +1,4 @@
-// www.pddivine.com
-// https://www.reddit.com/r/Bitcoin/comments/18q2jx/eli5_bitcoin_mining_xpost_in_eli5/
-let difficulty = 3; // Number of required leading zeros
+let difficulty = 3;
 
 let objToHash = {
   last_name: 'D3DSADASDWFSERGSERGSG%YE$DHDFGHNHFTUKYRNAS%YBA$TQ$VAWERDSDFBGE$D%YTBYE%^',
@@ -50,7 +48,10 @@ function runMiner() {
     dataObj.time = seconds;
     allHashMessage.push(dataObj);
 
-    finalMessage = ((seconds - seconds % 60) / 60)+"min "+(seconds % 60)+"s";
+    var secondsOnly = seconds % 60;
+    secondsOnly = secondsOnly.toFixed(2);
+
+    finalMessage = ((seconds - seconds % 60) / 60)+"min "+secondsOnly+"s";
     difficulty += 1;
     limitRun++;
   }
