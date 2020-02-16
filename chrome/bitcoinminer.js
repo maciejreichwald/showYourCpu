@@ -14,9 +14,10 @@ onmessage = function(e) {
 function runMiner() {
   var finalMessage = 0;
   var allHashMessage = [];
+  const start = new Date();
   while (limitRun <= 2) {
     console.log('\n New hash at difficulty: ', difficulty);
-    const start = new Date();
+    const startNow = new Date();
     let foundHash;
     const leadingZeroes_Difficulty = '0'.repeat(difficulty);
      console.log(leadingZeroes_Difficulty);
@@ -34,18 +35,19 @@ function runMiner() {
       counter++;
     }
     const seconds = (new Date() - start)/(1000);
+    const secondsNow = (new Date() - startNow)/(1000);
     console.log('Hash Found: ', foundHash);
     console.log('On Hash Attempt: ', objToHash.count + 1);
     console.log('On Hash Attempt Failed: ', counter);
-    console.log('Total time (minutes): ', (seconds - seconds % 60) / 60)
-    console.log('Total time (seconds): ', seconds % 60);
-    console.log('Total time (all seconds): ', seconds);
+    console.log('Total time (minutes): ', (secondsNow - secondsNow % 60) / 60)
+    console.log('Total time (seconds): ', secondsNow % 60);
+    console.log('Total time (all seconds): ', secondsNow);
     var dataObj = {}
     dataObj.hashFound = foundHash;
     dataObj.onHashAttempt = objToHash.count + 1;
     dataObj.onHashAttemptFail = counter;
     dataObj.difficulty = difficulty;
-    dataObj.time = seconds;
+    dataObj.time = secondsNow;
     allHashMessage.push(dataObj);
 
     var secondsOnly = seconds % 60;
@@ -54,8 +56,14 @@ function runMiner() {
     finalMessage = ((seconds - seconds % 60) / 60)+"min "+secondsOnly+"s";
     difficulty += 1;
     limitRun++;
+
+    var secondsOnlyNow = secondsNow % 60;
+    secondsOnlyNow = secondsOnlyNow.toFixed(2);
+    tempMessage = ((secondsNow - secondsNow % 60) / 60)+"min "+secondsOnlyNow+"s";
+    postMessage([true, limitRun, tempMessage]);
+
   }
-  postMessage([finalMessage, allHashMessage]);
+  postMessage([false, finalMessage, allHashMessage]);
 }
 
 // From http://www.xorbin.com/tools/sha256-hash-calculator

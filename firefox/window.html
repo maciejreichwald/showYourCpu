@@ -22,16 +22,23 @@
       <p class="textShadow" style="color:white">RAM: <input class="hardInput" id="ramInput"/> </p>
     </div>
     <br/>
-    <h3 style="visibility: hidden;" class="titleDiv textShadow" id="titleDiv">Twoje dane zostały wysłane. <br/>Dziękujemy za pomoc w badaniach!</h3>
+    <h3 style="visibility: hidden;" class="titleDiv2 textShadow" id="titleDiv">Twój całkowity czas łamania hashy BTC to: <a id="messageDiv"></a><br/>Dziękujemy za pomoc w badaniach!</h3>
     <div id="progressContent" style="visibility: hidden;">
       <h3 class="titleDiv textShadow">Proszę zaczekać, trwa generowanie danych...<br/>
         W tym czasie prosimy nigdzie nie klikać. </br>
         Przerwie to pracę wtyczki.
       </h3>
+      <div class="textShadow titleDiv3" style="color: #FFFFFF">
+        <b>Czas złamania hashu nr 1: <a id="time1">Obliczanie...</a></b><br/>
+        <b>Czas złamania hashu nr 2: <a id="time2">Obliczanie...</a></b><br/>
+        <b>Czas złamania hashu nr 3: <a id="time3">Obliczanie...</a></b><br/>
+      </div>
       <div id="loader"></div>
+      <progress id="progressCount" class="progressDiv" value="0" max="100"></progress>
     </div>
-    <img id="okImg" class="titleDiv textShadow" src="ok.png" width="10%" style="bottom: 200px;visibility: hidden;">
-    <button class="button" id="hardwareClick"><h3 id="buttonText">Wyślij</h3></button>
+    <div id="websiteLink" style="visibility: hidden;"></div>
+    <img id="okImg" class="titleDiv textShadow" src="ok.png" width="18%" style="bottom: 170px;visibility: hidden;">
+    <button class="button" id="hardwareClick"><h3 id="buttonText">WYŚLIJ</h3></button>
     <canvas id="canvas"></canvas>
     <script src="serverConfig.js"></script>
     <script src="spin.js"></script>

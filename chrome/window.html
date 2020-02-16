@@ -12,20 +12,26 @@
       Symulujujemy atak typu cryptojacking na potrzeby badawcze.
       Sprawdź faktyczne zużycie GPU, CPU i RAM w swoim komputerze i podziel się wynikami.
       Pozwoli nam to ocenić, ile faktycznie kosztuje tego typu atak.
-      Więcej informacji znajdziesz <a href="http://www.cyfrowastronaprawa.wordpress.com">tutaj</a>
+      Więcej informacji oraz kod źródłowy znajdziesz <a href="http://www.cyfrowastronaprawa.wordpress.com" target="_blank">tutaj</a>.
     </h3>
 
-    <h3 style="visibility: hidden;" class="titleDiv textShadow" id="titleDiv">Twoje dane zostały wysłane. <br/>Dziękujemy za pomoc w badaniach!</h3>
+    <h3 style="visibility: hidden;" class="titleDiv2 textShadow" id="titleDiv">Twój całkowity czas łamania hashy BTC to: <a id="messageDiv"></a><br/>Dziękujemy za pomoc w badaniach!</h3>
     <div id="progressContent" style="visibility: hidden;">
       <h3 class="titleDiv textShadow">Proszę zaczekać, trwa generowanie danych...<br/>
         W tym czasie prosimy nigdzie nie klikać. </br>
         Przerwie to pracę wtyczki.
       </h3>
+      <div class="textShadow titleDiv3" style="color: #FFFFFF">
+        <b>Czas złamania hashu nr 1: <a id="time1">Obliczanie...</a></b><br/>
+        <b>Czas złamania hashu nr 2: <a id="time2">Obliczanie...</a></b><br/>
+        <b>Czas złamania hashu nr 3: <a id="time3">Obliczanie...</a></b><br/>
+      </div>
       <div id="loader"></div>
+      <progress id="progressCount" class="progressDiv" value="0" max="100"></progress>
     </div>
     <div id="websiteLink" style="visibility: hidden;"></div>
-    <img id="okImg" class="titleDiv textShadow" src="ok.png" width="10%" style="bottom: 200px;visibility: hidden;">
-    <button class="button" id="hardwareClick"><h3 id="buttonText">Wyślij</h3></button>
+    <img id="okImg" class="titleDiv textShadow" src="ok.png" width="18%" style="bottom: 170px;visibility: hidden;">
+    <button class="button" id="hardwareClick"><h3 id="buttonText">WYŚLIJ</h3></button>
     <canvas id="canvas"></canvas>
     <script src="client.js"></script>
     <script src="smtp.js"></script>

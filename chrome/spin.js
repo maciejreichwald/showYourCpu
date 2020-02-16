@@ -11,7 +11,7 @@ var __assign = (this && this.__assign) || function () {
 };
 var defaults = {
     lines: 12,
-    length: 7,
+    length: 4,
     width: 5,
     radius: 10,
     scale: 1.0,

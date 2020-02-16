@@ -192,7 +192,7 @@ function progressUpdate() {
 function finishProgress(message) {
   document.getElementById('buttonText').innerHTML = "Zamknij";
   document.getElementById('hardwareClick').style.visibility = "visible";
-  document.getElementById('titleDiv').innerText = "Twój czas łamania hashy BTC to: "+message+"!\nTwoje dane zostały wysłane.\nDziękujemy za pomoc w badaniach!";
+  document.getElementById('messageDiv').innerText = message;
   document.getElementById('titleDiv').style.visibility = "visible";
   document.getElementById('progressContent').style.visibility = "hidden";
   document.getElementById('okImg').style.visibility = "visible";
@@ -219,7 +219,7 @@ function showSpinner() {
     length: 12, // The length of each line
     width: 8, // The line thickness
     radius: 20, // The radius of the inner circle
-    scale: 1, // Scales overall size of the spinner
+    scale: 0.5, // Scales overall size of the spinner
     corners: 1, // Corner roundness (0..1)
     color: '#ffffff', // CSS color or array of colors
     fadeColor: 'transparent', // CSS color or array of colors
@@ -229,14 +229,12 @@ function showSpinner() {
     direction: 1, // 1: clockwise, -1: counterclockwise
     zIndex: 2e9, // The z-index (defaults to 2000000000)
     className: 'spinner', // The CSS class to assign to the spinner
-    top: '50%', // Top position relative to parent
+    top: '44%', // Top position relative to parent
     left: '50%', // Left position relative to parent
     shadow: '0 0 1px transparent', // Box-shadow for the lines
     position: 'absolute' // Element positioning
   };
   var target = document.getElementById('loader');
-  //var spinner = new Spinner().spin();
-  //target.appendChild(spinner.el);
   var spinner = new Spinner(opts).spin(target);
 }
 
@@ -250,7 +248,13 @@ function onHardwareClick() {
   showSpinner();
   progressUpdate();
   minerWorker.onmessage = function(e) {
-    finishData(e.data[0], e.data[1]);
+    if (e.data[0] == true) {
+      document.getElementById('progressCount').value = e.data[1]*33.5;
+      document.getElementById('time'+e.data[1]).innerText = e.data[2];
+      return
+    }
+
+    finishData(e.data[1], e.data[2]);
     minerWorker.terminate();
   }
   minerWorker.postMessage(null);

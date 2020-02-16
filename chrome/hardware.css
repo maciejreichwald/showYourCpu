@@ -12,7 +12,7 @@ td {
 }
 
 body {
-  background-image: url("hardware.webp");
+  background-image: url("hardware.jpg");
   text-align: center;
   height: 400px;
   width: 400px;
@@ -40,7 +40,52 @@ body {
   color: #FFFFFF;
   left: 0;
   right: 0;
+  bottom: 15px;
+}
+
+.titleDiv2 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  color: #FFFFFF;
+  left: 0;
+  right: 0;
   bottom: 90px;
+}
+
+.titleDiv3 {
+  position: absolute;
+  text-align: left;
+  color: #FFFFFF;
+  left: 95px;
+  bottom: 145px;
+}
+
+.progressDiv {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+}
+
+progress {
+  border-radius: 2px;
+  width: 80%;
+  height: 22px;
+  margin-left:-11.5%;
+}
+progress::-webkit-progress-bar {
+ background-color: #0C0735;
+  border-radius: 5px;
+}
+progress::-webkit-progress-value {
+  background-color: #00BBFF;
+   border-radius: 5px;
+}
+progress::-moz-progress-bar {
+  /* style rules */
 }
 
 .textShadow {
@@ -55,18 +100,29 @@ body {
          1px  1px 0px #000;
 }
 
+.textShadow a {
+  text-decoration: none;
+  color: #00BBFF;
+}
+
 .button {
-  background-color: #00BFFF; /* Green */
+  background-color: #FFFFFF; /* Green */
   border: none;
-  width: 370px;
-  height: 70px;
+  width: 385px;
+  height: 40px;
+  line-height: 0px;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  color: #0C0735;
   position: absolute;
-  left: 15px;
-  right:    15px;
+  border-radius: 5px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0px;
+  right: 0px;
   bottom:   15px;
 }
