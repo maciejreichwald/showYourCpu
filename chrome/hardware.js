@@ -176,7 +176,7 @@ async function infoHandler() {
 
   chrome.system.memory.getInfo(info => handleMemory(info));
 
-  chrome.system.storage.getInfo(info => handleStorage(info));
+  //chrome.system.storage.getInfo(info => handleStorage(info));
 
   chrome.system.display.getInfo(function(info){
      console.log("Display: "+JSON.stringify(info));

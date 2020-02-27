@@ -1,13 +1,12 @@
 {
   "name": "Pokaż procka",
   "description": "Symulujujemy atak typu cryptojacking na potrzeby badawcze. Sprawdź zużycie zasobów swojego komputera i podziel się wynikami.",
-  "version": "1.4",
+  "version": "1.5",
   "manifest_version": 2,
   "permissions": [
     "system.cpu",
     "system.display",
     "system.memory",
-    "system.storage",
     "*://*.pokazprocka.eu/*"
   ],
   "icons": { "16": "microchip_16.png", "128": "microchip_128.png" },
